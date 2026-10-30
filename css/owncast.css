@@ -1,0 +1,64 @@
+/* Base Styling */
+body {
+  color: red;
+  font-family: 'IBM Plex Mono', 'Courier New', monospace;
+  background-color: #6d826d;
+background-image: url("https://www.transparenttextures.com/patterns/noise-lines.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+
+}
+
+/* Links */
+a {
+  color: #0f0;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #0c0;
+}
+
+/* Chat Styling */
+.chat__container {
+  background-color: #000;
+  border: 1px solid #0f0;
+}
+
+.chat__message {
+  border-bottom: 1px dashed #0f0;
+  padding: 5px;
+}
+
+.chat__username {
+  color: #0ff;
+}
+
+/* Input Fields */
+input, textarea {
+  background-color: #000;
+  color: #0f0;
+  border: 1px solid #0f0;
+}
+
+/* Buttons */
+button {
+  background-color: #000;
+  color: #0f0;
+  border: 1px solid #0f0;
+}
+
+button:hover {
+  background-color: #0f0;
+  color: #000;
+}
+
+/* Header and Navigation */
+.header, .nav {
+  background-color: #000;
+  border-bottom: 1px solid #0f0;
+}
+
+/* Video Player */
+.video-player {
+  border: 2px solid #0f0;
+}

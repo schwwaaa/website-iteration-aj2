@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+
+ _______
+|_,.,- -\
+   ||
+   ||
+   ##
+   ##             schwwaaa.net
+
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Schwwaaa | Media Production, Software and Live Broadcast</title>
+  <meta name="description" content="Schwwaaa is a global media production company. Live broadcast, software, music videos, short films, events and newsletter.">
+  <link rel="icon" href="img/schwwaaa-trans.png">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="page">
+
+    <!-- Masthead -->
+    <header class="masthead">
+      <div class="masthead-top">
+        <a class="brand" href="#top" aria-label="Schwwaaa home">
+          <img src="img/schwwaaa-trans.png" alt="Schwwaaa">
+        </a>
+        <div class="masthead-tools">
+          <form class="search" role="search" onsubmit="return false">
+            <label for="siteSearch">Search</label>
+            <input id="siteSearch" type="search" placeholder="Search the site">
+            <button type="submit" class="button">Go</button>
+          </form>
+          <div class="colourways" role="group" aria-label="Colour scheme">
+            <span>Colour</span>
+            <button type="button" class="swatch" data-colorway="navy" aria-pressed="false" aria-label="Navy" style="--sw:#2b5d91"></button>
+            <button type="button" class="swatch" data-colorway="slate" aria-pressed="true" aria-label="Slate" style="--sw:#55657a"></button>
+            <button type="button" class="swatch" data-colorway="olive" aria-pressed="false" aria-label="Olive" style="--sw:#5d7645"></button>
+            <button type="button" class="swatch" data-colorway="oxblood" aria-pressed="false" aria-label="Oxblood" style="--sw:#8a4352"></button>
+          </div>
+        </div>
+      </div>
+      <nav class="mainnav" aria-label="Main">
+        <ul>
+          <li><a href="#live">Live</a></li>
+          <li><a href="#software">Software</a></li>
+          <li><a href="#productions">Productions</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
+          <li><a href="#connect">Connect</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="layout">
+
+      <!-- Sidebar -->
+      <aside class="sidebar" aria-label="Sidebar">
+        <!-- On phones these two panels fold away as accordions (see js/app.js). -->
+        <details class="panel" open>
+          <summary class="panel-title">What's New</summary>
+          <ul class="news-list" id="whatsNew"></ul>
+        </details>
+
+        <details class="panel" open>
+          <summary class="panel-title">Connect</summary>
+          <ul class="link-list" id="sideSocial"></ul>
+        </details>
+      </aside>
+
+      <!-- Main column -->
+      <main id="main" class="content">
+        <div class="content-error" id="contentError" role="alert" hidden></div>
+
+        <section class="featured" id="top">
+          <p class="kicker">Media production &middot; Software &middot; Live broadcast</p>
+          <h1>Shaping tomorrow. Today.</h1>
+          <p>Schwwaaa is a global media production company, founded in 2015 to bring people together. We make films, music videos and live broadcasts, and we build the software that makes them. We iterate. We create. We serve.</p>
+          <div class="actions">
+            <a class="button button-go" href="#live">Watch live</a>
+            <a class="button" href="#newsletter">Join the newsletter</a>
+            <a class="button" href="#connect">Join the Discord</a>
+          </div>
+        </section>
+
+        <!-- Live -->
+        <section class="block" id="live" aria-labelledby="live-title">
+          <h2 class="block-title" id="live-title">Live Broadcast</h2>
+          <p class="block-intro">Our live channel. The player below is the same one you can open on its own.</p>
+          <div class="live-stage">
+            <button type="button" class="live-cover" id="liveStart">
+              <span class="play-mark" aria-hidden="true"></span>
+              <span>Start the live feed</span>
+              <small>The player loads when you press play.</small>
+            </button>
+            <iframe id="liveFrame" class="live-frame" title="Schwwaaa live player" allow="autoplay; fullscreen" allowfullscreen hidden></iframe>
+          </div>
+          <p class="block-foot">The player includes paint overlay, image filters, a low-pass filter, a 3-band equaliser and stereo pan. <a href="schwwaaa-live-player.html" target="_blank" rel="noopener">Open the full player</a>.</p>
+        </section>
+
+        <!-- Software -->
+        <section class="block" id="software" aria-labelledby="software-title">
+          <h2 class="block-title" id="software-title">Software Projects</h2>
+          <p class="block-intro">Tools, instruments and experiments we build and run. Choose a category to narrow the list.</p>
+          <div class="tabs" id="projectTabs" aria-label="Filter software"></div>
+          <div class="card-grid" id="projectGrid"></div>
+        </section>
+
+        <!-- Productions -->
+        <section class="block" id="productions" aria-labelledby="productions-title">
+          <h2 class="block-title" id="productions-title">Productions</h2>
+          <p class="block-intro">Music videos, short films and vignettes from the studio. Select a title to watch it here.</p>
+          <div class="tabs" id="productionTabs" aria-label="Filter productions"></div>
+          <div class="media-grid" id="productionGrid"></div>
+        </section>
+
+        <!-- Events -->
+        <section class="block" id="events" aria-labelledby="events-title">
+          <h2 class="block-title" id="events-title">Events</h2>
+          <p class="block-intro">Upcoming events, and an archive of replays from past ones.</p>
+          <h3 class="sub-title">Upcoming</h3>
+          <div id="upcomingEvents" class="event-list"></div>
+          <h3 class="sub-title">Archive</h3>
+          <div id="pastEvents" class="event-list"></div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="block" id="newsletter" aria-labelledby="newsletter-title">
+          <h2 class="block-title" id="newsletter-title">Newsletter</h2>
+          <p class="block-intro">Event dates, new releases and other news, by email. We do not share addresses. You can unsubscribe at any time.</p>
+          <form class="form" id="newsletterForm" novalidate>
+            <div class="form-row">
+              <label class="field">
+                <span>Name</span>
+                <input type="text" name="name" data-field="name" autocomplete="name" required>
+              </label>
+              <label class="field">
+                <span>E-mail address</span>
+                <input type="email" name="email" data-field="email" autocomplete="email" required>
+              </label>
+            </div>
+            <label class="field">
+              <span>Comment (optional)</span>
+              <textarea name="comment" data-field="comment" rows="3"></textarea>
+            </label>
+            <label class="check">
+              <input type="checkbox" name="newsletter" data-field="newsletter" checked>
+              Send me the newsletter
+            </label>
+            <div class="form-foot">
+              <button type="submit" class="button button-go">Subscribe</button>
+              <p class="form-status" id="newsletterStatus" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </section>
+
+        <!-- Connect -->
+        <section class="block" id="connect" aria-labelledby="connect-title">
+          <h2 class="block-title" id="connect-title">Connect</h2>
+          <p class="block-intro">Find us where the conversation is happening.</p>
+          <ul class="social-list" id="socialList"></ul>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-cols">
+        <div>
+          <h3>Sections</h3>
+          <ul>
+            <li><a href="#live">Live Broadcast</a></li>
+            <li><a href="#software">Software Projects</a></li>
+            <li><a href="#productions">Productions</a></li>
+            <li><a href="#events">Events</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Stay in touch</h3>
+          <ul>
+            <li><a href="#newsletter">Newsletter</a></li>
+            <li><a href="#connect">Connect</a></li>
+            <li><a href="classic.html">Previous site (2025)</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-legal">&copy; Schwwaaa. All rights reserved. This site is best viewed at 1024 &times; 768 or higher.</p>
+    </footer>
+  </div>
+
+  <!-- Media dialog: shared by productions and event replays -->
+  <dialog class="media-dialog" id="mediaDialog" aria-labelledby="mediaTitle">
+    <div class="media-dialog-head">
+      <h2 id="mediaTitle">Now playing</h2>
+      <button type="button" class="button" id="mediaClose">Close</button>
+    </div>
+    <div class="media-frame">
+      <iframe id="mediaFrame" title="Video player" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <p class="media-note" id="mediaNote"></p>
+  </dialog>
+
+  <script src="data/content.js"></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+body {
+    background: #419f88 url("../img/diagonal-waves.png") repeat;
+    color: #222;
+    font-family: 'Tahoma', sans-serif;
+}
+
+/* Hamburger for mobile */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 1rem;
+}
+/* END Hambuger */
+
+nav, footer {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(0, 58, 102, 1) 100%);
+    border: 3px solid #2ae3d0;
+    color: #fff;
+    padding: 0.25rem;
+}
+
+nav a, footer a {
+    color: #f1ff3c;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+h1, h2, h3 {
+    font-family: 'Courier New', monospace;
+    color: #003366;
+}
+
+marquee {
+    font-size: 1.1rem;
+    color: #2ae3d0;
+    background: #556f89;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 2px gray;
+}
+
+
+
+
+/* sections Groups related content under a shared heading. */
+/* articles are for self-contained, independent and/or syndicated content (blog posts, news items etc). */
+
+section, article {
+    background-color: #ffffffcc;
+    border: 2px solid #999;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+
+ /* Sign up form */ 
+
+  button, input[type="text"], input[type="email"] {
+    background-color: #FFF5E6;
+    color: #000;
+    font-family: 'Courier New', monospace;
+    border: 2px solid #FF9900;
+  }
+
+/* END Signup Form */
+
+/* Accordion */
+.accordion summary {
+    background: #fdffed url("../img/tasky.png") repeat;
+    color: #f1ff3c;
+    padding: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid #003366;
+    text-align: center;
+  }
+
+    .accordion iframe {
+    width: 90vw;
+    max-width: 800px;
+    border: none;
+    display: block;
+    margin: 0 auto;
+  }
+
+
+
+/* END Accodion */
+
+
+/* Horizontal line GIF */
+#horizline {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+#horizline img {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    margin: auto;
+}
+/* END Horizontal Line */
+
+
+/* topnav*/
+
+#topnav {
+    color: #5c6635;
+}
+
+#logoimg {
+    max-width: 150px;
+}
+
+#yt-icon {
+    width: 75px;
+    height: 50px;
+    cursor: pointer;
+}
+
+
+/* Watch Now Live */
+#watchBtn:hover {
+    cursor: pointer;
+}
+
+#watchBtnText {
+    color: #2ae3d0;
+    text-shadow: red 2px 5px;
+}
+
+#watchBtnText:hover {
+    color: blue;
+    cursor: s-resize;
+    text-shadow: lightgreen 2px 5px;
+}
+
+
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+
+    #watchBtnText {
+        font-size: 1.2rem;
+    }
+
+    #horizline img {
+        width: 100%;
+        height: auto;
+    }
+
+    nav ul:not(:first-child) {
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        right: 1rem;
+        top: 70px;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav a, footer a {
+        color: #556f89;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+
+    #logoimg {
+        width: 90%;
+    }
+
+    #topnav li {
+        font-size: 60%;
+    }
+  }
+/* END Mobile */
